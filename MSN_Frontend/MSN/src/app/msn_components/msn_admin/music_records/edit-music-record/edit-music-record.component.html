@@ -1,0 +1,126 @@
+<form [formGroup]="editRecordForm" (ngSubmit)="onSubmit()">
+    <section class="vh-50 gradient-custom">
+        <div class="container py-5 h-50">
+            <div class="row d-flex justify-content-center align-items-center h-50">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card bg-dark text-white">
+                        <div class="card-body p-5 text-center">
+
+                            <div class="mb-md-2 mt-md-2 pb-5">
+
+                                <h2 class="fw-bold mb-2 text-uppercase text-warning">Edit Record</h2>
+                                <p class="text-white-50 mb-5">Change details below</p>
+
+                                <div class="form-outline form-blue mb-2">
+                                    <label for="" class="form-label">ID</label>
+                                    <input
+                                        [class.is-invalid]="editRecordForm.get('id')?.invalid && editRecordForm.get('id')?.touched"
+                                        formControlName="id" type="text" class="form-control form-control-md"
+                                        ngModel="{{musicRecord.id}}" readonly>
+                                    <small
+                                        [class.d-none]="editRecordForm.get('id')?.valid || editRecordForm.get('id')?.untouched"
+                                        class="text-danger">id is required</small>
+                                </div>
+
+                                <div class="form-outline form-blue mb-2">
+                                    <label for="" class="form-label">Title</label>
+                                    <input
+                                        [class.is-invalid]="editRecordForm.get('title')?.invalid && editRecordForm.get('title')?.touched"
+                                        formControlName="title" type="text" class="form-control form-control-md"
+                                        ngModel="{{musicRecord.title}}" #myinput>
+                                    <small
+                                        [class.d-none]="editRecordForm.get('title')?.valid || editRecordForm.get('title')?.untouched"
+                                        class="text-danger">Title is required</small>
+                                </div>
+
+                                <div class="form-outline form-white mb-2">
+                                    <label for="" class="form-label">Artist</label>
+                                    <input
+                                        [class.is-invalid]="editRecordForm.get('artist')?.invalid && editRecordForm.get('artist')?.touched"
+                                        formControlName="artist" type="text" class="form-control form-control-md"
+                                        ngModel="{{musicRecord.artist}}">
+                                    <small
+                                        [class.d-none]="editRecordForm.get('artist')?.valid || editRecordForm.get('artist')?.untouched"
+                                        class="text-danger">Artist is required</small>
+                                </div>
+
+                                <div class="form-outline form-white mb-2">
+                                    <label for="" class="form-label">Genre</label>
+                                    <select
+                                        [class.is-invalid]="editRecordForm.get('genre')?.invalid && editRecordForm.get('genre')?.touched"
+                                        formControlName="genre" name="Genre" id="" class="form-control form-control-md"
+                                        ngModel="{{musicRecord.genre}}">
+                                        <option value="Rock">Rock</option>
+                                        <option value="Pop">Pop</option>
+                                        <option value="HipHop">HipHop</option>
+                                        <option value="Metal">Metal</option>
+                                        <option value="Classical">Classical</option>
+                                        <option value="Electronic">Electronic</option>
+                                    </select>
+                                    <small
+                                        [class.d-none]="editRecordForm.get('genre')?.valid || editRecordForm.get('genre')?.untouched"
+                                        class="text-danger">Genre is required</small>
+                                </div>
+                                <div class="form-outline form-white mb-2">
+                                    <label for="" class="form-label">Type</label>
+                                    <select
+                                        [class.is-invalid]="editRecordForm.get('type')?.invalid && editRecordForm.get('type')?.touched"
+                                        formControlName="type" name="Type" id="" class="form-control form-control-md"
+                                        ngModel="{{musicRecord.type}}">
+                                        <option value="Song">Song</option>
+                                        <option value="Track">Track</option>
+                                        <option value="Album">Album</option>
+                                        <option value="Mix">Mix</option>
+                                    </select>
+                                    <small
+                                        [class.d-none]="editRecordForm.get('type')?.valid || editRecordForm.get('type')?.untouched"
+                                        class="text-danger">Type is required</small>
+                                </div>
+                                <div class="form-outline form-blue mb-2">
+                                    <label for="" class="form-label">Url</label>
+                                    <input
+                                        [class.is-invalid]="editRecordForm.get('url')?.invalid && editRecordForm.get('url')?.touched"
+                                        formControlName="url" type="text" class="form-control form-control-md"
+                                        ngModel="{{musicRecord.url}}">
+                                    <small
+                                        [class.d-none]="editRecordForm.get('url')?.valid || editRecordForm.get('url')?.untouched"
+                                        class="text-danger">Url is required</small>
+                                </div>
+                                <div class="form-outline form-blue mb-2">
+                                    <label for="" class="form-label">Image Url</label>
+                                    <input
+                                        [class.is-invalid]="editRecordForm.get('imageUrl')?.invalid && editRecordForm.get('imageUrl')?.touched"
+                                        formControlName="imageUrl" type="text" class="form-control form-control-md"
+                                        ngModel="{{musicRecord.imageUrl}}">
+                                    <small
+                                        [class.d-none]="editRecordForm.get('imageUrl')?.valid || editRecordForm.get('imageUrl')?.untouched"
+                                        class="text-danger">Image Url is required</small>
+                                </div>
+                                <div class="form-outline form-blue mb-2">
+                                    <label for="" class="form-label">Rating</label>
+                                    <input
+                                        [class.is-invalid]="editRecordForm.get('rating')?.invalid && editRecordForm.get('rating')?.touched"
+                                        formControlName="rating" type="number" class="form-control form-control-md"
+                                        ngModel="{{musicRecord.rating}}">
+                                    <small
+                                        [class.d-none]="editRecordForm.get('rating')?.valid || editRecordForm.get('rating')?.untouched"
+                                        class="text-danger">Rating is required</small>
+                                </div>
+
+                                <button [disabled]="editRecordForm.invalid"
+                                    class="btn btn-outline-warning btn-lg px-5 mt-3" type="submit">Submit
+                                </button>
+                            </div>
+                            <div>
+                                <p class="mb-0"><a routerLink="/all_music_records" class="text-white fw-bold">Go back to
+                                        All
+                                        Music Records</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>

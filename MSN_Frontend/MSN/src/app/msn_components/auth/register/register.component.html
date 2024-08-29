@@ -1,0 +1,83 @@
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <section class="vh-50 gradient-custom">
+        <div class="container py-5 h-50">
+            <div class="row d-flex justify-content-center align-items-center h-50">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card bg-dark text-white">
+                        <div class="card-body p-5 text-center">
+
+                            <div class="mb-md-2 mt-md-2 pb-5">
+
+                                <h2 class="fw-bold mb-2 text-uppercase text-primary">Sign Up</h2>
+                                <p class="text-white-50 mb-5">Please register or login to use our services to the full
+                                    extent</p>
+
+                                <div class="form-outline form-blue mb-2">
+                                    <label for="" class="form-label">Email</label>
+                                    <input
+                                        [class.is-invalid]="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched"
+                                        formControlName="email" type="text" class="form-control form-control-lg"
+                                        #myinput>
+                                    <small
+                                        [class.d-none]="registrationForm.get('email')?.valid || registrationForm.get('email')?.untouched"
+                                        class="text-danger">Email is required</small>
+                                </div>
+
+                                <div class="form-outline form-white mb-2">
+                                    <label for="" class="form-label">Password</label>
+                                    <input
+                                        [class.is-invalid]="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched"
+                                        formControlName="password" type="password" class="form-control form-control-lg">
+                                    <small
+                                        [class.d-none]="registrationForm.get('password')?.valid || registrationForm.get('password')?.untouched"
+                                        class="text-danger">Password is required</small>
+                                </div>
+
+                                <div class="form-outline form-white mb-2">
+                                    <label for="" class="form-label">First Name</label>
+                                    <input
+                                        [class.is-invalid]="registrationForm.get('firstname')?.invalid && registrationForm.get('firstname')?.touched"
+                                        formControlName="firstname" type="text" class="form-control form-control-lg">
+                                    <small
+                                        [class.d-none]="registrationForm.get('firstname')?.valid || registrationForm.get('firstname')?.untouched"
+                                        class="text-danger">First Name is required</small>
+                                </div>
+                                <div class="form-outline form-white mb-2">
+                                    <label for="" class="form-label">Last Name</label>
+                                    <input
+                                        [class.is-invalid]="registrationForm.get('lastname')?.invalid && registrationForm.get('lastname')?.touched"
+                                        formControlName="lastname" type="text" class="form-control form-control-lg">
+                                    <small
+                                        [class.d-none]="registrationForm.get('lastname')?.valid || registrationForm.get('lastname')?.untouched"
+                                        class="text-danger">Last Name is required</small>
+                                </div>
+                                <div class="form-outline form-white mb-2">
+                                    <label for="" class="form-label">Age</label>
+                                    <input
+                                        [class.is-invalid]="registrationForm.get('age')?.invalid && registrationForm.get('age')?.touched"
+                                        formControlName="age" type="number" class="form-control form-control-lg">
+                                    <small
+                                        [class.d-none]="registrationForm.get('age')?.valid || registrationForm.get('age')?.untouched"
+                                        class="text-danger">Age is required</small>
+                                </div>
+
+                                <button [disabled]="registrationForm.invalid"
+                                    class="btn btn-outline-primary btn-lg px-5 mt-3" type="submit">Register
+                                </button>
+                            </div>
+                            <div>
+                                <p class="mb-0">Already have an account? <a routerLink="/login"
+                                        class="text-success fw-bold">Login</a>
+                                </p>
+                            </div>
+                            <div>
+                                <p class="mb-0"><a routerLink="/home" class="text-success fw-bold">Go back to Index</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>

@@ -1,0 +1,30 @@
+<div class="container mt-3">
+    <p class="mb-0"><a routerLink="/home" class="text-white fw-bold">Go back to All Genres</a>
+    </p>
+</div>
+<div class="container mt-3">
+    <h2 class="m-3 text-left">The Best of Electronic Music:</h2>
+</div>
+
+<div class="container mt-5">
+    <div class="row m-3" *ngFor="let row of splitRecords; let i = index">
+        <div class="col" *ngFor="let col of splitRecords[i]">
+            <div class="card" style="width: 18rem; height: 30rem;">
+                <img class="card-img-top" src={{col.imageUrl}} alt="Book Image" style="height: 200px" />
+
+                <div class="card-body" style="background-color: whitesmoke">
+                    <h5 class="card-title">{{col.title}}</h5>
+                    Artist: {{col.artist}} <br>
+                    Genre: {{col.genre}} <br>
+                    Type: {{col.type}} <br>
+                    <h6 class="mt-1">Rating: {{col.rating}}</h6>
+                </div>
+
+                <div class="card-footer text-center" style="background-color:snow">
+                    Listen here: <a class="link-danger" href={{col.url}}>YouTube</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

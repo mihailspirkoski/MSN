@@ -1,0 +1,55 @@
+<form [formGroup]="changeRoleForm" (ngSubmit)="onSubmit()">
+    <section class="vh-50 gradient-custom">
+        <div class="container py-5 h-50">
+            <div class="row d-flex justify-content-center align-items-center h-50">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card bg-dark text-white">
+                        <div class="card-body p-5 text-center">
+
+                            <div class="mb-md-2 mt-md-2 pb-5">
+
+                                <h2 class="fw-bold mb-2 text-uppercase text-warning">Manage Permissions</h2>
+                                <p class="text-white-50 mb-5">Change role below</p>
+
+                                <div class="form-outline form-blue mb-2">
+                                    <label for="" class="form-label">Username</label>
+                                    <input
+                                        [class.is-invalid]="changeRoleForm.get('email')?.invalid && changeRoleForm.get('email')?.touched"
+                                        formControlName="email" type="text" class="form-control form-control-md"
+                                        ngModel="{{user.email}}" readonly>
+                                    <small
+                                        [class.d-none]="changeRoleForm.get('email')?.valid || changeRoleForm.get('email')?.untouched"
+                                        class="text-danger">Email is required</small>
+                                </div>
+                                <div class="form-outline form-white mb-2">
+                                    <label for="" class="form-label">Role</label>
+                                    <select
+                                        [class.is-invalid]="changeRoleForm.get('role')?.invalid && changeRoleForm.get('role')?.touched"
+                                        formControlName="role" name="role" id="" class="form-control form-control-md"
+                                        ngModel="{{user.role}}" #myinput>
+                                        <option value="Admin">Admin</option>
+                                        <option value="StandardUser">Standard User</option>
+                                    </select>
+                                    <small
+                                        [class.d-none]="changeRoleForm.get('role')?.valid || changeRoleForm.get('role')?.untouched"
+                                        class="text-danger">role is required</small>
+                                </div>
+
+
+                                <button [disabled]="changeRoleForm.invalid"
+                                    class="btn btn-outline-warning btn-lg px-5 mt-3" type="submit">Submit
+                                </button>
+                            </div>
+                            <div>
+                                <p class="mb-0"><a routerLink="/all_users" class="text-white fw-bold">Go back to
+                                        All
+                                        Users</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
