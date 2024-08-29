@@ -10,7 +10,7 @@ Music Social Network Application using ASP .NET Core as backend, Angular as fron
 4. Users can browse music record by genre
 5. Users can make music record requests by making forum posts, which admins will later approve/reject
 6. JWT Authentication
-7. Messaging - users can chat with each other (SignalR)
+7. Messaging - users can chat with each other ( SignalR )
 
 
 **MSN Home Page**
