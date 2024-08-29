@@ -7,7 +7,7 @@ Music Social Network Application using ASP .NET Core as backend, Angular as fron
 1. User Management - Roles: Admin and StandardUser
 2. Clean architecture ( domain, infrastructure, application, web )
 3. CRUD operations on the music record model, partial operations on the other models
-4. Users can browse music record by genre
+4. Users can browse music records by genre
 5. Users can make music record requests by making forum posts, which admins will later approve/reject
 6. JWT Authentication
 7. Messaging - users can chat with each other ( SignalR )
