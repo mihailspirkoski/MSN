@@ -1,5 +1,5 @@
 # MSN
-Music Social Network Application using ASP .NET Core as backend, Angular as frontend technology and a MongoDB database, with Bootstrap being used in the Admin application
+Music Social Network Application using ASP .NET Core as backend, Angular as frontend technology, MongoDB database, and Bootstrap
 
 
 **__Description/Functionalities__**
