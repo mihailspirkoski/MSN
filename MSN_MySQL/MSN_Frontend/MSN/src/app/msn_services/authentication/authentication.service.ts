@@ -25,6 +25,13 @@ export class AuthenticationService {
   }
 
   loggedIn() {
+    let token: any = this.getToken();
+    let decoded: any = jwtDecode(token);
+    let getExpired = decoded['exp'];
+    let isExpired = (Math.floor((new Date).getTime() / 1000)) >= getExpired;
+    if (isExpired) {
+      localStorage.removeItem('token');
+    }
     return !!localStorage.getItem('token');
   }
 
