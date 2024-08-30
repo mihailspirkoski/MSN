@@ -1,5 +1,6 @@
 # MSN
 Music Social Network Application using ASP .NET Core Web API as backend, Angular as frontend technology, MongoDB database and Bootstrap
+
 MSN_MySQL is the same solution using MySQL database instead of MongoDB
 
 
