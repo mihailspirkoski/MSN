@@ -1,0 +1,141 @@
+<form [formGroup]="approvePostForm" (ngSubmit)="onSubmit()">
+    <section class="vh-50 gradient-custom">
+        <div class="container py-5 h-50">
+            <div class="row d-flex justify-content-center align-items-center h-50">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card bg-dark text-white">
+                        <div class="card-body p-5 text-center">
+
+                            <div class="mb-md-2 mt-md-2 pb-5">
+
+                                <h2 class="fw-bold mb-2 text-uppercase text-warning">Approve Post</h2>
+                                <p class="text-white-50 mb-5">Review details below</p>
+
+                                <div class="form-outline form-blue mb-2">
+                                    <label for="" class="form-label">ID</label>
+                                    <input
+                                        [class.is-invalid]="approvePostForm.get('id')?.invalid && approvePostForm.get('id')?.touched"
+                                        formControlName="id" type="text" class="form-control form-control-md"
+                                        ngModel="{{forumPost.id}}" readonly>
+                                    <small
+                                        [class.d-none]="approvePostForm.get('id')?.valid || approvePostForm.get('id')?.untouched"
+                                        class="text-danger">id is required</small>
+                                </div>
+
+                                <div class="form-outline form-blue mb-2">
+                                    <label for="" class="form-label">Title</label>
+                                    <input
+                                        [class.is-invalid]="approvePostForm.get('title')?.invalid && approvePostForm.get('title')?.touched"
+                                        formControlName="title" type="text" class="form-control form-control-md"
+                                        ngModel="{{forumPost.title}}" readonly>
+                                    <small
+                                        [class.d-none]="approvePostForm.get('title')?.valid || approvePostForm.get('title')?.untouched"
+                                        class="text-danger">Title is required</small>
+                                </div>
+
+                                <div class="form-outline form-white mb-2">
+                                    <label for="" class="form-label">Artist</label>
+                                    <input
+                                        [class.is-invalid]="approvePostForm.get('artist')?.invalid && approvePostForm.get('artist')?.touched"
+                                        formControlName="artist" type="text" class="form-control form-control-md"
+                                        ngModel="{{forumPost.artist}}" readonly>
+                                    <small
+                                        [class.d-none]="approvePostForm.get('artist')?.valid || approvePostForm.get('artist')?.untouched"
+                                        class="text-danger">Artist is required</small>
+                                </div>
+
+                                <div class="form-outline form-white mb-2">
+                                    <label for="" class="form-label">Genre</label>
+                                    <select
+                                        [class.is-invalid]="approvePostForm.get('genre')?.invalid && approvePostForm.get('genre')?.touched"
+                                        formControlName="genre" name="Genre" id="" class="form-control form-control-md"
+                                        ngModel="{{forumPost.genre}}">
+                                        <option disabled value="Rock">Rock</option>
+                                        <option disabled value="Pop">Pop</option>
+                                        <option disabled value="HipHop">HipHop</option>
+                                        <option disabled value="Metal">Metal</option>
+                                        <option disabled value="Classical">Classical</option>
+                                        <option disabled value="Electronic">Electronic</option>
+                                    </select>
+                                    <small
+                                        [class.d-none]="approvePostForm.get('genre')?.valid || approvePostForm.get('genre')?.untouched"
+                                        class="text-danger">Genre is required</small>
+                                </div>
+                                <div class="form-outline form-white mb-2">
+                                    <label for="" class="form-label">Type</label>
+                                    <select
+                                        [class.is-invalid]="approvePostForm.get('type')?.invalid && approvePostForm.get('type')?.touched"
+                                        formControlName="type" name="Type" id="" class="form-control form-control-md"
+                                        ngModel="{{forumPost.type}}">
+                                        <option disabled value="Song">Song</option>
+                                        <option disabled value="Track">Track</option>
+                                        <option disabled value="Album">Album</option>
+                                        <option disabled value="Mix">Mix</option>
+                                    </select>
+                                    <small
+                                        [class.d-none]="approvePostForm.get('type')?.valid || approvePostForm.get('type')?.untouched"
+                                        class="text-danger">Type is required</small>
+                                </div>
+                                <div class="form-outline form-blue mb-2">
+                                    <label for="" class="form-label">Time Created</label>
+                                    <input
+                                        [class.is-invalid]="approvePostForm.get('timeCreated')?.invalid && approvePostForm.get('timeCreated')?.touched"
+                                        formControlName="timeCreated" type="text" class="form-control form-control-md"
+                                        ngModel="{{forumPost.timeCreated | date}}" readonly>
+                                    <small
+                                        [class.d-none]="approvePostForm.get('timeCreated')?.valid || approvePostForm.get('timeCreated')?.untouched"
+                                        class="text-danger">Time Created is required</small>
+                                </div>
+                                <div class="form-outline form-blue mb-2">
+                                    <label for="" class="form-label">Description</label>
+                                    <textarea
+                                        [class.is-invalid]="approvePostForm.get('description')?.invalid && approvePostForm.get('description')?.touched"
+                                        formControlName="description" type="text" class="form-control form-control-md"
+                                        ngModel="{{forumPost.description}}" readonly>
+                                    </textarea>
+                                    <small
+                                        [class.d-none]="approvePostForm.get('description')?.valid || approvePostForm.get('description')?.untouched"
+                                        class="text-danger">Description is required</small>
+                                </div>
+                                <div class="form-outline form-blue mb-2">
+                                    <label for="" class="form-label">Created By</label>
+                                    <input
+                                        [class.is-invalid]="approvePostForm.get('userName')?.invalid && approvePostForm.get('userName')?.touched"
+                                        formControlName="userName" type="text" class="form-control form-control-md"
+                                        ngModel="{{forumPost.userName}}" readonly>
+                                    <small
+                                        [class.d-none]="approvePostForm.get('userName')?.valid || approvePostForm.get('userName')?.untouched"
+                                        class="text-danger">Created By is required</small>
+                                </div>
+                                <div class="form-outline form-white mb-2">
+                                    <label for="" class="form-label">Approval</label>
+                                    <select
+                                        [class.is-invalid]="approvePostForm.get('isApproved')?.invalid && approvePostForm.get('isApproved')?.touched"
+                                        formControlName="isApproved" name="isApproved" id=""
+                                        class="form-control form-control-md" ngModel="{{forumPost.isApproved}}"
+                                        #myinput>
+                                        <option value="true">Approve</option>
+                                        <option value="false">Reject</option>
+                                    </select>
+                                    <small
+                                        [class.d-none]="approvePostForm.get('isApproved')?.valid || approvePostForm.get('isApproved')?.untouched"
+                                        class="text-danger">isApproved is required</small>
+                                </div>
+
+                                <button [disabled]="approvePostForm.invalid"
+                                    class="btn btn-outline-warning btn-lg px-5 mt-3" type="submit">Submit
+                                </button>
+                            </div>
+                            <div>
+                                <p class="mb-0"><a routerLink="/all_forum_posts" class="text-white fw-bold">Go back to
+                                        All
+                                        Forum Posts</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>

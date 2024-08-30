@@ -1,0 +1,6 @@
+@MSN_WebApi_HostAddress = http://localhost:5290
+
+GET {{MSN_WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

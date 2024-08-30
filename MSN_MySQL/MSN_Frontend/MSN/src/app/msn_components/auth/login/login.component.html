@@ -1,0 +1,56 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <section class="vh-50 gradient-custom">
+        <div class="container py-5 h-50">
+            <div class="row d-flex justify-content-center align-items-center h-50">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card bg-dark text-white">
+                        <div class="card-body p-5 text-center">
+
+                            <div class="mb-md-5 mt-md-4 pb-5">
+
+                                <h2 class="fw-bold mb-2 text-uppercase text-success">Login</h2>
+                                <p class="text-danger-50 mb-5">Please login or create account to use our services to the
+                                    full extent</p>
+
+                                <div class="form-outline form-blue mb-2">
+                                    <label for="" className="form-label">Email</label>
+                                    <input
+                                        [class.is-invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+                                        formControlName="email" type="text" class="form-control form-control-lg"
+                                        #myinput>
+                                    <small
+                                        [class.d-none]="loginForm.get('email')?.valid || loginForm.get('email')?.untouched"
+                                        class="text-danger">Email is required</small>
+                                </div>
+
+                                <div class="form-outline form-white mb-2">
+                                    <label for="" className="form-label">Password</label>
+                                    <input
+                                        [class.is-invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+                                        formControlName="password" type="password" class="form-control form-control-lg">
+                                    <small
+                                        [class.d-none]="loginForm.get('password')?.valid || loginForm.get('password')?.untouched"
+                                        class="text-danger">Password is required</small>
+                                </div>
+
+                                <button [disabled]="loginForm.invalid" class="btn btn-outline-success btn-lg px-5 mt-3"
+                                    type="submit">Login
+                                </button>
+                            </div>
+                            <div>
+                                <p class="mb-0">Don't have an account? <a routerLink="/register"
+                                        class="text-blue-50 fw-bold">Register</a>
+                                </p>
+                            </div>
+                            <div>
+                                <p class="mb-0"><a routerLink="/home" class="text-blue-50 fw-bold">Go back to Index
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>

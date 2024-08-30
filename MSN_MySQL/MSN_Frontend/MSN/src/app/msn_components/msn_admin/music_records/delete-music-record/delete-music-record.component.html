@@ -1,0 +1,126 @@
+<form [formGroup]="deleteRecordForm" (ngSubmit)="onSubmit()">
+    <section class="vh-50 gradient-custom">
+        <div class="container py-5 h-50">
+            <div class="row d-flex justify-content-center align-items-center h-50">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card bg-dark text-white">
+                        <div class="card-body p-5 text-center">
+
+                            <div class="mb-md-2 mt-md-2 pb-5">
+
+                                <h2 class="fw-bold mb-2 text-uppercase text-warning">Delete Record</h2>
+                                <p class="text-white-50 mb-5">Review details below</p>
+
+                                <div class="form-outline form-blue mb-2">
+                                    <label for="" class="form-label">ID</label>
+                                    <input
+                                        [class.is-invalid]="deleteRecordForm.get('id')?.invalid && deleteRecordForm.get('id')?.touched"
+                                        formControlName="id" type="text" class="form-control form-control-md"
+                                        ngModel="{{musicRecord.id}}" readonly>
+                                    <small
+                                        [class.d-none]="deleteRecordForm.get('id')?.valid || deleteRecordForm.get('id')?.untouched"
+                                        class="text-danger">id is required</small>
+                                </div>
+
+                                <div class="form-outline form-blue mb-2">
+                                    <label for="" class="form-label">Title</label>
+                                    <input
+                                        [class.is-invalid]="deleteRecordForm.get('title')?.invalid && deleteRecordForm.get('title')?.touched"
+                                        formControlName="title" type="text" class="form-control form-control-md"
+                                        ngModel="{{musicRecord.title}}" readonly>
+                                    <small
+                                        [class.d-none]="deleteRecordForm.get('title')?.valid || deleteRecordForm.get('title')?.untouched"
+                                        class="text-danger">Title is required</small>
+                                </div>
+
+                                <div class="form-outline form-white mb-2">
+                                    <label for="" class="form-label">Artist</label>
+                                    <input
+                                        [class.is-invalid]="deleteRecordForm.get('artist')?.invalid && deleteRecordForm.get('artist')?.touched"
+                                        formControlName="artist" type="text" class="form-control form-control-md"
+                                        ngModel="{{musicRecord.artist}}" readonly>
+                                    <small
+                                        [class.d-none]="deleteRecordForm.get('artist')?.valid || deleteRecordForm.get('artist')?.untouched"
+                                        class="text-danger">Artist is required</small>
+                                </div>
+
+                                <div class="form-outline form-white mb-2">
+                                    <label for="" class="form-label">Genre</label>
+                                    <select
+                                        [class.is-invalid]="deleteRecordForm.get('genre')?.invalid && deleteRecordForm.get('genre')?.touched"
+                                        formControlName="genre" name="Genre" id="" class="form-control form-control-md"
+                                        ngModel="{{musicRecord.genre}}">
+                                        <option disabled value="Rock">Rock</option>
+                                        <option disabled value="Pop">Pop</option>
+                                        <option disabled value="HipHop">HipHop</option>
+                                        <option disabled value="Metal">Metal</option>
+                                        <option disabled value="Classical">Classical</option>
+                                        <option disabled value="Electronic">Electronic</option>
+                                    </select>
+                                    <small
+                                        [class.d-none]="deleteRecordForm.get('genre')?.valid || deleteRecordForm.get('genre')?.untouched"
+                                        class="text-danger">Genre is required</small>
+                                </div>
+                                <div class="form-outline form-white mb-2">
+                                    <label for="" class="form-label">Type</label>
+                                    <select
+                                        [class.is-invalid]="deleteRecordForm.get('type')?.invalid && deleteRecordForm.get('type')?.touched"
+                                        formControlName="type" name="Type" id="" class="form-control form-control-md"
+                                        ngModel="{{musicRecord.type}}" readonly>
+                                        <option disabled value="Song">Song</option>
+                                        <option disabled value="Track">Track</option>
+                                        <option disabled value="Album">Album</option>
+                                        <option disabled value="Mix">Mix</option>
+                                    </select>
+                                    <small
+                                        [class.d-none]="deleteRecordForm.get('type')?.valid || deleteRecordForm.get('type')?.untouched"
+                                        class="text-danger">Type is required</small>
+                                </div>
+                                <div class="form-outline form-blue mb-2">
+                                    <label for="" class="form-label">Url</label>
+                                    <input
+                                        [class.is-invalid]="deleteRecordForm.get('url')?.invalid && deleteRecordForm.get('url')?.touched"
+                                        formControlName="url" type="text" class="form-control form-control-md"
+                                        ngModel="{{musicRecord.url}}" readonly>
+                                    <small
+                                        [class.d-none]="deleteRecordForm.get('url')?.valid || deleteRecordForm.get('url')?.untouched"
+                                        class="text-danger">Url is required</small>
+                                </div>
+                                <div class="form-outline form-blue mb-2">
+                                    <label for="" class="form-label">Image Url</label>
+                                    <input
+                                        [class.is-invalid]="deleteRecordForm.get('imageUrl')?.invalid && deleteRecordForm.get('imageUrl')?.touched"
+                                        formControlName="imageUrl" type="text" class="form-control form-control-md"
+                                        ngModel="{{musicRecord.imageUrl}}" readonly>
+                                    <small
+                                        [class.d-none]="deleteRecordForm.get('imageUrl')?.valid || deleteRecordForm.get('imageUrl')?.untouched"
+                                        class="text-danger">Image Url is required</small>
+                                </div>
+                                <div class="form-outline form-blue mb-2">
+                                    <label for="" class="form-label">Rating</label>
+                                    <input
+                                        [class.is-invalid]="deleteRecordForm.get('rating')?.invalid && deleteRecordForm.get('rating')?.touched"
+                                        formControlName="rating" type="number" class="form-control form-control-md"
+                                        ngModel="{{musicRecord.rating}}" readonly>
+                                    <small
+                                        [class.d-none]="deleteRecordForm.get('rating')?.valid || deleteRecordForm.get('rating')?.untouched"
+                                        class="text-danger">Rating is required</small>
+                                </div>
+
+                                <button [disabled]="deleteRecordForm.invalid"
+                                    class="btn btn-outline-warning btn-lg px-5 mt-3" type="submit">Submit
+                                </button>
+                            </div>
+                            <div>
+                                <p class="mb-0"><a routerLink="/all_music_records" class="text-white fw-bold">Go back to
+                                        All
+                                        Music Records</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
